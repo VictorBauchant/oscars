@@ -6,8 +6,15 @@
 
 console.log('Herkansinkie');
 
-//var articleHover = document.querySelector("main#articles > ul > li");
-//
-//articleHover.addEventListener("hover", function(){
-//    articleHover.classList.add("hovered")
-//});
+var hamburgerDropdown = document.querySelector('nav#navigation > button');
+var navigationItems = document.querySelector('nav#navigation > ul');
+
+hamburgerDropdown.addEventListener("click", function(){
+  if(navigationItems.classList.contains("dropdown")) {
+    navigationItems.classList.remove("dropdown");
+  } else {
+    navigationItems.classList.add("dropdown");
+  }
+})
+
+

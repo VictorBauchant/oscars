@@ -4,11 +4,13 @@
     body {
 /*        background-color: grey;*/
         margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
 
 
     /*  -  TOP NAVIGATION  -  */
+
     nav#navigation > ul {
         background-color: white;
         list-style: none;
@@ -18,39 +20,58 @@
 
         display: flex;
         justify-content: flex-start;
+      display: none;
     }
 
-    nav#navigation > ul > li {
-        display: none;
+    nav#navigation > ul.dropdown {
+        display: block;
+
+        position: absolute;
+        right: 0;
+        top: 2.5rem;
+        z-index: 1;
+
+        width: 20rem;
+        height: 100%;
+    }
+
+    nav#navigation > ul.dropdown > li {
+        font-size: 2rem;
+        padding: 1.5rem 1.5rem 1rem 0rem;
+        margin: 1rem 1rem 0rem 0rem;
+
+        border-top: .001rem solid #D3D3D3;
+
+
     }
 
     nav#navigation > ul > li:first-of-type {
-        display: block;
+        display: none;
     }
 
     nav#navigation > ul > li:nth-of-type(2) {
-        display: block;
+        display: none;
     }
 
 
     /*  -  Hamburger menu  -  */
-    nav#navigation > ul > button {
-        margin-left: auto;
-        margin-top: -1.5rem;
+    nav#navigation > button {
+        margin-left: 85%;
+        margin-top: 0rem;
 
         background: none;
         border: none;
     }
 
-    nav#navigation > ul > button img {
-        width: 2rem;
+    nav#navigation > button img {
+        width: 5rem;
     }
 
 
     /*  -  Nav Items visual  -  */
     nav#navigation > ul > li > a {
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 1em;
+        font-size: 1rem;
         padding-bottom: 1.8rem;
         margin: 2rem 1rem 0em;
         text-decoration: none;
@@ -59,24 +80,33 @@
 
     nav#navigation > ul > li > a.active {
         color: #b7a261;
+
+        border-bottom: .24rem solid #b7a261;
     }
 
 
     /*  -  Logo's in Navigation  -  */
-    nav#navigation > ul > li:first-of-type > a > img {
+    nav#navigation > a:first-of-type > img {
+        position: absolute;
+        top: 1.5rem;
+        left: ;
+
         width: 2.1em;
-        margin-top: -0.6rem;
         border-right: 1px solid;
         border-right-width: thin;
-        padding-right: 1.2rem;
-
-        margin-left: -1rem;
+        padding-right: 1.5rem;
+        margin-left: 1rem;
     }
 
-    nav#navigation > ul > li:nth-of-type(2) > a > img {
+    nav#navigation > a:nth-of-type(2) > img {
+        position: absolute;
+        top: -.2rem;
+        left: 3.5rem;
+        z-index: -1;
+
         width: 10em;
-        margin-left: -2em;
-        margin-top: -1.3em;
+        margin-left: 1rem;
+        margin-top: 1rem;
     }
 
 
@@ -326,6 +356,7 @@
     /*  -  OTHER ARTICLES  -  */
     section#more-articles {
         margin-top: 4rem;
+
     }
 
     section#more-articles > header > h2 {
@@ -371,6 +402,8 @@
         padding-top: .75rem;
         margin-top: 2rem;
 
+        max-width: 25rem;
+
     }
 
     section#more-articles > article:nth-of-type(3) > p {
@@ -407,6 +440,8 @@
         color: black;
         font-size: 1.3rem;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+        max-width: 25rem;
     }
 
     section#more-articles > article > a:hover {
@@ -425,42 +460,113 @@
     }
 
 
-    /*  -  Banner Articles  -  */
-/*
-    section#more-articles > article:nth-of-type(4) {
-        background-image: url(https://drraa3ej68s2c.cloudfront.net/wp-content/uploads/2019/02/24205822/5b99b08e1492a999fd3d4dba38e83c56b056472509095f1870630ee935f8d5fd-1170x292.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
 
-        padding: 9rem 0rem 0rem;
-        margin: 1rem 10%;
 
+
+    /*    Form - Bron: Joost Faber, Codepen.io   */
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        transition: all .5s;
+
+        padding: 1rem 8rem;
+
+        background-color: antiquewhite;
         color: white;
-    }
 
-    section#more-articles > article:nth-of-type(8) {
-        background-image: url(https://static.wixstatic.com/media/1fb481_ed9a03c8dc014f60ba65672c9274359e~mv2.jpg);
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        padding: 9rem 0rem 0rem;
-        margin: 1rem 10%;
-
-        color: white;
 
     }
 
-    section#more-articles > article:nth-of-type(4), article:nth-of-type(8) > p > a {
-        background-color: white;
-        border-radius: 2em;
-        padding: .6rem 2.6rem;
-        color: #b7a261;
+    form:invalid {
+        background-color: #b7a261;
+    }
+
+    form:valid {
+        color: black;
+    }
+
+    form > h1 {
+        align-self: center;
+
+        text-align: center;
         text-transform: uppercase;
+        font-size: 1.6rem;
+
+        max-width: 16rem;
 
     }
-*/
+
+    form > fieldset {
+        border: none;
+        width: 10rem;
+
+        align-self: center;
+    }
+
+    form > fieldset > legend {
+        display: none;
+    }
+
+    form > fieldset > input {
+        margin-top: .3rem;
+        margin-bottom: 1rem;
+    }
+
+    form > fieldset > p {
+        margin-top: -.5rem;
+    }
+
+    form > fieldset > p > img {
+        width: 1rem;
+    }
+
+    form > fieldset:invalid > p {
+        display: none;
+    }
+
+    form > fieldset:valid > p {
+        display: block;
+        padding: .25rem;
+    }
+
+    input:focus {
+        transform: scale(1.02, 1.02);
+    }
+
+    input::placeholder {
+        color: rgba(0,0,0,.25)
+        font-style: italic;
+    }
+
+    form button {
+        display: block;
+
+        opacity: .5;
+        width: 5rem;
+        padding: 0.5rem 0rem;
+        background-color: grey;
+
+        border: none;
+
+        align-self: center;
+    }
+
+    form:valid button {
+        display: block;
+        opacity: 1;
+        background-color: #b7a261;
+
+        border-bottom: .1rem solid rgba(0,0,0,.3);
+        border-right: .1rem solid rgba(0,0,0,.3);
+
+    }
+
+    form:valid button:hover {
+        transition: all .5s;
+        transition: scale(1.5, 1.5);
+    }
 
 
 
@@ -483,13 +589,6 @@
         justify-content: center;
     }
 
-    nav#navigation > ul > button {
-        display: none;
-    }
-    nav#navigation > ul > li {
-        display: block;
-    }
-
     nav#navigation > ul > li > a {
         padding-bottom: 1.8rem;
         margin: 2rem 1rem 0em;
@@ -501,11 +600,19 @@
         color: #b7a261;
     }
 
-    nav#navigation > ul > li > a.active {
-        border-bottom: 3px solid #b7a261;
+    nav#navigation > button {
+        display: none;
     }
 
     /*  -  Logo's in Navigation  -  */
+
+    nav#navigation > ul > li:first-of-type {
+        display: block;
+    }
+
+    nav#navigation > ul > li:nth-of-type(2) {
+        display: block;
+    }
 
     nav#navigation > ul > li:first-of-type > a > img {
         width: 2.1em;
@@ -521,19 +628,16 @@
         margin-top: -1.3em;
     }
 
+    nav#navigation > a {
+        display: none;
+    }
+
 
 
 
 
     /*  -  TOP FOOTER (Next Show, Rolex, Social Media)  -  */
     footer#top-footer {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        align-items: center;
-
-        background-color: #efece3;
-
         height: 5rem;
 
         margin-top: 0.2rem;
@@ -542,6 +646,7 @@
 
     footer#top-footer > article {
         padding: 0rem 10.5rem;
+
     }
 
     footer#top-footer > article:nth-of-type(3) {
@@ -549,17 +654,7 @@
     }
 
     footer#top-footer > article:first-of-type > header > h4 {
-        margin-top: 1.8em;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        text-transform: uppercase;
-    }
-
-    footer#top-footer > article:first-of-type > footer > h5 {
-        margin-top: -1.3em;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-weight: 100;
-        font-size: .9em;
-        text-transform: uppercase;
+        min-width: 8rem;
     }
 
     footer#top-footer > article:nth-of-type(2) > header > p > a > img {
@@ -567,19 +662,11 @@
         width: 12em;
     }
 
-    /*  -  Top Footer Display None's  -  */
-    footer#top-footer > article:nth-of-type(2) > header > h4 {
-        display: none;
-    }
-
-    footer#top-footer > article:nth-of-type(3) > header > h4 {
-        display: none;
-    }
-
 
     /*  -  Social Media Positioning  -  */
+
     footer#top-footer > article:nth-of-type(3) > header > a {
-        margin-right: 0.8em;
+        margin-right: 0.8rem;
     }
 
     footer#top-footer > article:nth-of-type(3) > header > a:nth-of-type(3) {
@@ -843,41 +930,111 @@
         border-bottom: 4px solid #b7a261;
     }
 
-    /*  -  Banner Articles  -  */
-/*
-    section#more-articles > article:nth-of-type(4) {
-        background-image: url(https://drraa3ej68s2c.cloudfront.net/wp-content/uploads/2019/02/24205822/5b99b08e1492a999fd3d4dba38e83c56b056472509095f1870630ee935f8d5fd-1170x292.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
 
-        padding: 9rem 0rem 0rem;
-        margin: 1rem 10%;
 
+
+/*    Form - Bron: Joost Faber, Codepen.io   */
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        transition: all .5s;
+
+        padding: 1rem 8rem 100%;
+
+        background-color: antiquewhite;
         color: white;
-    }
 
-    section#more-articles > article:nth-of-type(8) {
-        background-image: url(https://static.wixstatic.com/media/1fb481_ed9a03c8dc014f60ba65672c9274359e~mv2.jpg);
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-
-        padding: 9rem 0rem 0rem;
-        margin: 1rem 10%;
-
-        color: white;
 
     }
 
-    section#more-articles > article:nth-of-type(4), article:nth-of-type(8) > p > a {
-        background-color: white;
-        border-radius: 2em;
-        padding: .6rem 2.6rem;
-        color: #b7a261;
+    form:invalid {
+        background-color: #b7a261;
+    }
+
+    form:valid {
+        color: black;
+    }
+
+    form > h1 {
+        align-self: center;
+
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+
+        max-width: 16rem;
+
+    }
+
+    form > fieldset {
+        border: none;
+        width: 10rem;
+
+        align-self: center;
+    }
+
+    form > fieldset > legend {
+        display: none;
+    }
+
+    form > fieldset > input {
+        margin-top: .3rem;
+        margin-bottom: 1rem;
+    }
+
+    form > fieldset > p {
+        margin-top: -.5rem;
+    }
+
+    form > fieldset > p > img {
+        width: 1rem;
+    }
+
+    form > fieldset:invalid > p {
+        display: none;
+    }
+
+    form > fieldset:valid > p {
+        display: block;
+        padding: .25rem;
+    }
+
+    input:focus {
+        transform: scale(1.02, 1.02);
+    }
+
+    input::placeholder {
+        color: rgba(0,0,0,.25)
+        font-style: italic;
+    }
+
+    form button {
+        display: block;
+
+        opacity: .5;
+        width: 5rem;
+        padding: 0.5rem 0rem;
+        background-color: grey;
+
+        border: none;
+        color: white;
         text-transform: uppercase;
 
+        align-self: center;
     }
-*/
+
+    form:valid button {
+        display: block;
+        opacity: 1;
+        background-color: #b7a261;
+
+        border-bottom: .1rem solid rgba(0,0,0,.3);
+        border-right: .1rem solid rgba(0,0,0,.3);
+
+    }
+
+
 
 }

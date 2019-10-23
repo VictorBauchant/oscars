@@ -5,38 +5,96 @@
     <meta charset="UTF-8">
     <title>Frontend Development | Oscars</title>
     <link rel="stylesheet" href="styles/style.css">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
     <header>
-        <nav>
+        <nav id="navigation">
+            <ul>
+                <li><a href="#"><img src="https://vignette.wikia.nocookie.net/logopedia/images/9/9e/ABC_Logo_%282007%29.png/revision/latest?cb=20190328200910" alt="ABC Logo"></a></li>
+                <li><a href="#"><img src="https://www.sccpre.cat/png/big/105/1056790_oscar-logo-png.png" alt="Oscars Logo"></a></li>
 
-            <ul id="mainNav">
-<!--
-                <li><a href=""><img src="" alt="">ABC</a></li>
-                <li><a href="">OSCARS</a></li>
--->
-                <li><a href="index.html">Home</a></li>
-                <li><a href="winners.html" id="active">Winners</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="redCarpet.html">Red Carpet</a></li>
-                <li><a href="video.html">Video</a></li>
-                <li><a href="photos.html">Photos</a></li>
-                <li><a href="emailsignup.html">Email Sign-up</a></li>
+                <li><a href="index.html" class="" >Home</a></li>
+                <li><a href="#" class="">Winners</a></li>
+                <li><a href="#" class="">News</a></li>
+                <li><a href="#" class="">Red Carpet</a></li>
+                <li><a href="#" class="">Video</a></li>
+                <li><a href="#" class="">Photos</a></li>
+                <li><a href="winners.html" class="active">Email Sign-up</a></li>
+
             </ul>
+
+            <a href="#"><img src="https://vignette.wikia.nocookie.net/logopedia/images/9/9e/ABC_Logo_%282007%29.png/revision/latest?cb=20190328200910" alt="ABC Logo"></a>
+            <a href="#"><img src="https://www.sccpre.cat/png/big/105/1056790_oscar-logo-png.png" alt="Oscars Logo"></a>
+
+            <button><img src="https://static.thenounproject.com/png/703781-200.png" alt="Hamburger Menu"></button>
+
+
+
         </nav>
+
+        <footer id="top-footer">
+            <h3>Next Show, Rolex Countdown, Social Media</h3>
+
+            <article>
+                <header>
+                    <h4>Live Sunday</h4>
+                </header>
+                <footer>
+                    <h5>February 9 2020</h5>
+                </footer>
+            </article>
+
+            <article>
+                <header>
+                    <p><a href="#"><img src="images/rolex_countdown.png" alt="Rolex Countdown"></a></p>
+
+                </header>
+
+            </article>
+
+            <article>
+                <header>
+                    <h4>Social Media</h4>
+                    <a href="#"><img src="https://oscar.go.com/images/twitter-hover.svg" alt="Twitter"></a>
+                    <a href="#"><img src="https://oscar.go.com/images/instagram-hover.svg" alt="Instagram"></a>
+                    <a href="#"><img src="https://oscar.go.com/images/fb-hover.svg" alt="Facebook"></a>
+                </header>
+
+            </article>
+
+        </footer>
+
     </header>
 
-    <section id="highFooter">
-        <p>
-            Live Sunday February 9 2020
-        </p>
-        <a href="#">Rolex</a>
-        <a href="#">Twitter</a>
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-    </section>
+    <main>
+
+        <form action="#">
+            <h1>E-Mail Sign Up</h1>
+            <fieldset>
+                <legend>Personalia</legend>
+                <label for="name">First Name</label>
+                <input id="name" type="text" placeholder="John" required>
+
+                <label for="surname">Last Name</label>
+                <input id="surname" type="text" placeholder="Smith" required>
+                <p><img src="http://tasputra.com/wp-content/uploads/2015/05/tick-mark-clip-art-346471.png" alt="Your Name Satisfies Our Conditions"></p>
+            </fieldset>
+
+            <fieldset>
+                <legend>E-mail</legend>
+                <label for="mail">E-Mail</label>
+                <input id="mail" type="email" placeholder="example@email.com" required>
+                <p><img src="http://tasputra.com/wp-content/uploads/2015/05/tick-mark-clip-art-346471.png" alt="Your E-Mail Satisfies Our Conditions"></p>
+
+            </fieldset>
+
+            <button>Sign Up</button>
+
+        </form>
+
+    </main>
 
 </body>
 
